@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:travelappextranet/screens/HomePage.dart';
 import 'package:travelappextranet/utils/Buttons.dart';
 import 'package:travelappextranet/utils/TextStyles.dart';
 import 'package:travelappextranet/utils/constants.dart';
@@ -164,6 +165,7 @@ class _SignInPageState extends State<SignInPage> {
                       startTimer();
                     }else{
                       print("Passwrod API call");
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomePage()));
                     }
 
                   });
