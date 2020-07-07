@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget{
 
 }
 class _HomePage extends State<HomePage>{
+  PageController _controller=PageController();
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -20,6 +21,52 @@ class _HomePage extends State<HomePage>{
           title: Text("HOME"),
         ),
         body: Container(
+          child: Column(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.only(top: 20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      child: Text("My Booking",style: Theme.of(context).textTheme.headline6.apply(color: Colors.white),),
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                       borderRadius: BorderRadius.all(Radius.circular(10.0))
+                      ),
+                      padding: EdgeInsets.only(top: 10,bottom: 10,right: 5,left: 5),
+                    ),
+                    SizedBox(width: 10,),
+                    Container(
+                      child: Text("Pre Booking",style: Theme.of(context).textTheme.headline6.apply(color: Colors.white),),
+                      decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.all(Radius.circular(10.0))
+                      ),
+                      padding: EdgeInsets.all(10.0),
+                    )
+                  ],
+                ),
+              ),
+        Expanded(
+          flex: 1,
+          child: PageView(
+            controller: _controller,
+            children: [
+              Container(
+                color: Colors.orange,
+              ),
+              Container(
+                color: Colors.yellow,
+              ),
+              Container(
+                color: Colors.green,
+              ),
+            ],
+          ),
+        )
+            ],
+          ),
 
         ),
         drawer: Drawer(
