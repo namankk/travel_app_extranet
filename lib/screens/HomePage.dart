@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:travelappextranet/utils/Widgets.dart';
+import 'package:travelappextranet/utils/constants.dart';
 
 class HomePage extends StatefulWidget{
   @override
@@ -21,15 +24,19 @@ class _HomePage extends State<HomePage>{
           title: Text("HOME"),
           bottom: TabBar(
         tabs: [
-            Icon(Icons.offline_pin),
-            Text('data')
+          Text('Upcoming \nBookings',style: Theme.of(context).textTheme.subtitle1.apply(color: kwhite),),
+            Text('Booking \nHistory',style: Theme.of(context).textTheme.subtitle1.apply(color: kwhite),)
             ],
         ),
         ),
         body: TabBarView(
           children: <Widget>[
             Center(
-              child: Icon(Icons.youtube_searched_for),
+              child: ListView.builder(
+                  itemBuilder: (buildcontext ,index){
+                    return MyCard();
+                  },
+                  itemCount: 10),
             ),Center(
               child: Text('Text with style'),
             )
@@ -44,7 +51,7 @@ class _HomePage extends State<HomePage>{
                 currentAccountPicture: CircleAvatar(
                   backgroundColor:
                   Theme.of(context).platform == TargetPlatform.iOS
-                      ? Colors.blue
+                      ? kdarkBlue
                       : Colors.white,
                   child: Text(
                     "A",
