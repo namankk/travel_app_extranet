@@ -12,11 +12,19 @@ final kgreyDark =  Colors.grey.shade700;
 final kgreyFill =  Colors.grey.shade200;
 //Textss
 
-const String POPPINS = "Poppins";
-const String OPEN_SANS = "OpenSans";
-const String SKIP = "Skip";
-const String NEXT = "Next";
-const String SLIDER_HEADING_1 = "Fast Travel!";
-const String SLIDER_HEADING_2 = "Easy to Use!";
-const String SLIDER_HEADING_3 = "Safest Option";
-const String SLIDER_DESC = "Live the best and easiest traveling experience with us,the fastest and most reliable option you can ever find.";
+// list of colors that we use in our app
+const kBackgroundColor = Color(0xFFF1EFF1);
+const kPrimaryColor = Color(0xFF035AA6);
+const kSecondaryColor = Color(0xFFFFA41B);
+const kTextColor = Color(0xFF000839);
+const kTextLightColor = Color(0xFF747474);
+const kBlueColor = Color(0xFF40BAD5);
+
+const kDefaultPadding = 20.0;
+
+// our default Shadow
+const kDefaultShadow = BoxShadow(
+  offset: Offset(0, 15),
+  blurRadius: 27,
+  color: Colors.black12, // Black color with 12% opacity
+);

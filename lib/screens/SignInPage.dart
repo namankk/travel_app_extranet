@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travelappextranet/screens/HomePage.dart';
+import 'package:travelappextranet/screens/products_screen.dart';
 import 'package:travelappextranet/utils/Buttons.dart';
 import 'package:travelappextranet/utils/TextStyles.dart';
 import 'package:travelappextranet/utils/constants.dart';
@@ -87,8 +88,8 @@ class _SignInPageState extends State<SignInPage> {
                 size: 35,
               ),
               SizedBox(height: 10),*/
-              BoldText("QuickStay24", 30.0, kdarkBlue),
-              NormalText("Extranet", kdarkBlue, 30.0),
+              BoldText("QuickStay24", 30.0, kPrimaryColor),
+              NormalText("Extranet", kPrimaryColor, 30.0),
               SizedBox(
                 height: 30,
               ),
@@ -165,14 +166,14 @@ class _SignInPageState extends State<SignInPage> {
                       startTimer();
                     }else{
                       print("Passwrod API call");
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomePage()));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductsScreen()));
                     }
 
                   });
 //                Navigator.push(context, MaterialPageRoute(builder: (_) {
 //                  return Home();
 //                }));
-                }, true,backgroundColor: kdarkBlue,),
+                }, true,backgroundColor: kPrimaryColor,),
               ),
               SizedBox(
                 height: 10,
@@ -206,7 +207,7 @@ class _SignInPageState extends State<SignInPage> {
 //                Navigator.push(context, MaterialPageRoute(builder: (_) {
 //                  return Home();
 //                }));
-                }, true),
+                }, true,backgroundColor: kSecondaryColor,),
               ),
               SizedBox(
                 height: 10,
