@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travelappextranet/components/no_data_card.dart';
 import 'package:travelappextranet/components/search_box.dart';
 import 'package:travelappextranet/models/product.dart';
 import 'package:travelappextranet/utils/constants.dart';
@@ -6,16 +7,36 @@ import 'package:travelappextranet/utils/constants.dart';
 import 'category_list.dart';
 import 'product_card.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
+
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return _Body();
+  }
+
+}
+class _Body extends State<Body>{
+  int selectedIndex=0;
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return SafeArea(
       bottom: false,
       child: Column(
         children: <Widget>[
-       //   SearchBox(onChanged: (value) {}),
-          CategoryList(),
-          SizedBox(height: kDefaultPadding / 2),
+          //   SearchBox(onChanged: (value) {}),
+          CategoryList(
+            selectedIndexCallBack: (selectedIndexValue){
+
+              setState(() {
+                print(selectedIndexValue.toString());
+                selectedIndex=selectedIndexValue;
+              });
+            },
+          ),
+
           Expanded(
             child: Stack(
               children: <Widget>[
@@ -30,7 +51,7 @@ class Body extends StatelessWidget {
                     ),
                   ),
                 ),
-                ListView.builder(
+                selectedIndex==0?No_Data_Card(): ListView.builder(
                   // here we use our demo procuts list
                   itemCount: products.length,
                   itemBuilder: (context, index) => ProductCard(
@@ -55,4 +76,5 @@ class Body extends StatelessWidget {
       ),
     );
   }
+
 }

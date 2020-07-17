@@ -4,6 +4,10 @@ import 'package:travelappextranet/utils/constants.dart';
 
 // We need statefull widget because we are gonna change some state on our category
 class CategoryList extends StatefulWidget {
+  Function selectedIndexCallBack;
+
+  CategoryList({this.selectedIndexCallBack});
+
   @override
   _CategoryListState createState() => _CategoryListState();
 }
@@ -18,10 +22,15 @@ class _CategoryListState extends State<CategoryList> {
       margin: EdgeInsets.symmetric(vertical: kDefaultPadding / 2),
       height: 50,
       child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           InkWell(
             onTap: (){
-
+              widget.selectedIndexCallBack.call(0);
+              setState(() {
+                selectedIndex=0;
+              });
             },
             child: Container(
               alignment: Alignment.center,
@@ -32,9 +41,9 @@ class _CategoryListState extends State<CategoryList> {
               ),
               padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
               decoration: BoxDecoration(
-                color: /*index == selectedIndex
+                color: 0 == selectedIndex
                     ? Colors.white.withOpacity(0.4)
-                    :*/ Colors.transparent,
+                    : Colors.transparent,
                 borderRadius: BorderRadius.circular(6),
               ),
               child: Text(
@@ -45,7 +54,10 @@ class _CategoryListState extends State<CategoryList> {
           ),
           InkWell(
             onTap: (){
-
+              widget.selectedIndexCallBack.call(1);
+              setState(() {
+                selectedIndex=1;
+              });
             },
             child: Container(
               alignment: Alignment.center,
@@ -56,9 +68,9 @@ class _CategoryListState extends State<CategoryList> {
               ),
               padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
               decoration: BoxDecoration(
-                color: /*index == selectedIndex*/
-                   /* ?*/ Colors.white.withOpacity(0.4)
-                    /*: Colors.transparent*/,
+                color: 1 == selectedIndex
+                    ? Colors.white.withOpacity(0.4)
+                    : Colors.transparent,
                 borderRadius: BorderRadius.circular(6),
               ),
               child: Text(

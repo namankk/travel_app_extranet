@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:travelappextranet/screens/PrivacyPolicy.dart';
 import 'package:travelappextranet/utils/Widgets.dart';
 import 'package:travelappextranet/utils/constants.dart';
 
@@ -63,22 +64,31 @@ class _HomePage extends State<HomePage>{
               ListTile(
                 leading: Icon(Icons.library_books),
                 title: Text("My booking"),
-
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PrivacyPolicy()));
+                },
               ),
               ListTile(
                 leading: Icon(Icons.account_circle),
                 title: Text("Profile"),
-
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PrivacyPolicy()));
+                },
               ),
               ListTile(
                 leading: Icon(Icons.note_add),
                 title: Text("Privacy policy"),
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PrivacyPolicy()));
+                },
 
               ),
               ListTile(
                 leading: Icon(Icons.exit_to_app),
                 title: Text("Logout"),
-
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PrivacyPolicy()));
+                },
               ),
             ],
           ),

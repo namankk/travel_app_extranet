@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:travelappextranet/components/body.dart';
+import 'package:travelappextranet/screens/NotificationScreen.dart';
 import 'package:travelappextranet/utils/constants.dart';
+
+import 'PrivacyPolicy.dart';
 
 
 class ProductsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(),
+      appBar: buildAppBar(context),
       backgroundColor: kPrimaryColor,
       body: Body(),
       drawer: Drawer(
@@ -30,22 +33,31 @@ class ProductsScreen extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.library_books),
               title: Text("My booking"),
-
+              onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PrivacyPolicy()));
+              },
             ),
             ListTile(
               leading: Icon(Icons.account_circle),
               title: Text("Profile"),
-
+              onTap: (){
+                Navigator.pop(context);
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PrivacyPolicy()));
+              },
             ),
             ListTile(
               leading: Icon(Icons.note_add),
               title: Text("Privacy policy"),
-
+              onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PrivacyPolicy()));
+              },
             ),
             ListTile(
               leading: Icon(Icons.exit_to_app),
               title: Text("Logout"),
-
+              onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PrivacyPolicy()));
+              },
             ),
           ],
         ),
@@ -53,7 +65,7 @@ class ProductsScreen extends StatelessWidget {
     );
   }
 
-  AppBar buildAppBar() {
+  AppBar buildAppBar(context) {
     return AppBar(
       elevation: 0,
       centerTitle: false,
@@ -61,7 +73,9 @@ class ProductsScreen extends StatelessWidget {
       actions: <Widget>[
         IconButton(
           icon: Icon(Icons.notifications_active),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context)=>NotificationScreen()));
+          },
         ),
       ],
     );

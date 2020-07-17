@@ -39,3 +39,66 @@ List<Product> products = [
       guestContact: "Guest Contact-8548545145"
   ),
 ];
+
+List<Product> notifications = [
+  Product(
+      id: 1,
+      price: 399,
+      title: "Naman",
+      checkInTime: "11-july-2020 at 12:00hrs",
+      checkoutTime: "11-july-2020 at 03:00hrs",
+      description:
+      "This is a system generated message from the admin of this application",
+      guestContact: "Guest Contact-8548545145"
+  ),
+  Product(
+      id: 2,
+      price: 499,
+      title: "Chadi",
+      checkInTime: "11-july-2020 at 12:00hrs",
+      checkoutTime: "11-july-2020 at 03:00hrs",
+      description:
+      "Something went wrong",
+      guestContact: "Guest Contact-8548545145"
+  ),
+  Product(
+      id: 3,
+      price: 56,
+      title: "Anant",
+      checkInTime: "11-july-2020 at 12:00hrs",
+      checkoutTime: "11-july-2020 at 03:00hrs",
+      description:
+      "Go goa gone",
+      guestContact: "Guest Contact-8548545145"
+  ),
+  Product(
+      id: 4,
+      price: 57,
+      title: "Shivam",
+      checkInTime: "11-july-2020 at 12:00hrs",
+      checkoutTime: "11-july-2020 at 03:00hrs",
+      description:
+      "Go goa gone",
+      guestContact: "Guest Contact-8548545145"
+  ),
+  Product(
+      id: 5,
+      price: 57,
+      title: "kashi",
+      checkInTime: "11-july-2020 at 12:00hrs",
+      checkoutTime: "11-july-2020 at 03:00hrs",
+      description:
+      "Go goa gone",
+      guestContact: "Guest Contact-8548545145"
+  ),
+  Product(
+      id: 6,
+      price: 58,
+      title: "Prakashi",
+      checkInTime: "11-july-2020 at 12:00hrs",
+      checkoutTime: "11-july-2020 at 03:00hrs",
+      description:
+      "Go goa gone",
+      guestContact: "Guest Contact-8548545145"
+  ),
+];
