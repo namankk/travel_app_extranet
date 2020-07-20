@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:travelappextranet/components/notification_card.dart';
 import 'package:travelappextranet/models/product.dart';
 
+import 'details_screen.dart';
+
 class NotificationScreen extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
@@ -28,14 +30,7 @@ class _NotificationScreen extends State<NotificationScreen>{
           itemIndex: index,
           product: notifications[index],
           press: () {
-//                      Navigator.push(
-//                        context,
-//                        MaterialPageRoute(
-//                          builder: (context) => DetailsScreen(
-//                            product: products[index],
-//                          ),
-//                        ),
-//                      );
+
           },
         ),
       ),

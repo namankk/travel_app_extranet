@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:travelappextranet/components/body.dart';
+import 'package:travelappextranet/models/product.dart';
+import 'package:travelappextranet/screens/MyProfileScreen.dart';
 import 'package:travelappextranet/screens/NotificationScreen.dart';
 import 'package:travelappextranet/utils/constants.dart';
 
+import 'ManageRates.dart';
 import 'PrivacyPolicy.dart';
+import 'details_screen.dart';
 
 
 class ProductsScreen extends StatelessWidget {
@@ -42,8 +46,27 @@ class ProductsScreen extends StatelessWidget {
               title: Text("Profile"),
               onTap: (){
                 Navigator.pop(context);
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>PrivacyPolicy()));
-              },
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MyProfileScreen(
+                      product: products[0],
+                    )
+                  ),
+                );              },
+            ),
+            ListTile(
+              leading: Icon(Icons.note),
+              title: Text("Manage Rates"),
+              onTap: (){
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ManageRates(
+                      )
+                  ),
+                );              },
             ),
             ListTile(
               leading: Icon(Icons.note_add),
